@@ -16,7 +16,7 @@ import javax.mail.internet.MimeMessage;
 
 public class Email {
 		static final String form = "kienhien200418@gmail.com";
-		static final String password = "lyoopzjddtacekxi";
+		static final String password = "root";
 		// properties
 		public  void sendMessage(String to) {
 			try {
