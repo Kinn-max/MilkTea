@@ -1,0 +1,267 @@
+.backgroud__sigIn-shop{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    font-family: var(--system-ui);
+    
+}
+
+.class__signIn-shopp{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+.notification__errol{
+  border-radius: 10px;
+  background: #2874A6 ;
+  position: fixed;
+  top: 10%;
+  right: 20%;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 20px 30px;
+  animation: topBot 0.5s linear;
+  z-index: 10;
+}
+@keyframes topBot {
+  from{
+      opacity: 0;
+      transform: translateY(-100%);
+  }
+  to{
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.update_information{
+  width: 1200px;
+  padding-top: 200px;
+  font-size: 1.4rem;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  background: var( --fff--title);
+  text-align: center;
+}
+td, th{
+  padding: 10px;
+}
+.table_input{
+  border: none;
+  width: 100%;
+  background: var( --fff--title);
+  /* border-left: 1px solid var( --pink-); */
+
+}
+.table_input:focus{
+  border: none;
+  outline: none;
+}
+.custom-button{
+  display: inline;
+}
+
+
+.form-container {
+    position: absolute;
+    width: 800px;
+    background-color: rgb(255,255,255);
+    color: rgba(243, 244, 246, 1);
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.heading__title{
+    color: #000000;
+    font-size: 1.4rem;
+    padding: 25px 10px 25px 30px;
+
+}
+.logo__Myshopp{
+    width: 55%;
+    display: flex;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(136deg, rgb(240, 248, 255) -1%, rgb(219, 238, 255) 85%);
+}
+.logo__Myshopp--img{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.logo__Myshopp--img img{
+    width: 100%;
+    height: 100%;
+}
+.maxim{
+    width: 100%;
+    color: var(--color-titlt--);
+}
+.maxim h3{
+  font-size: 2rem;
+  color: #000000;
+}
+
+.maxim p{
+    font-size: 1.6rem;
+}
+.heading__title h3{
+    font-size: 2.5rem;
+    
+}
+
+.title_signIn {
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  font-weight: 700;
+  font-family: var(--system-ui);
+  color: var(--blue--);
+
+
+}
+
+.form {
+  margin-top: 1.5rem;
+}
+
+.input-group {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+
+}
+
+.input-group label {
+  display: block;
+  color: #000000;
+  margin-bottom: 4px;
+  font-size: 1.3rem;
+}
+
+
+.inpu_bottom input {
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid rgba(55, 65, 81, 1); 
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: rgb(36, 36, 36);
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+  border-radius: 0;
+  height: 40px;
+  padding-left: 10px;
+}
+.inpu_bottomCheck{
+  border-bottom: 1px solid red !important; 
+
+}
+
+.inpu_bottom input:focus {
+  border-color: var(--color--hover--)!important; 
+}
+
+.forgot {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: rgba(156, 163, 175,1);
+  margin: 8px 0 14px 0;
+}
+
+.forgot a,.signup a {
+  color: rgba(243, 244, 246, 1);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot a:hover, .signup a:hover {
+  color: var(--color--hover--);
+  text-decoration: none;
+}
+
+.sign {
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  background-color:rgb(255, 66, 78);
+  padding: 0.75rem;
+  text-align: center;
+  color:  white;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1.8rem;
+}
+.sign:hover{
+	  cursor: pointer;
+}
+
+.social-message {
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+
+.line {
+  height: 1px;
+  flex: 1 1 0%;
+  background-color: rgba(55, 65, 81, 1);
+}
+
+.social-message .message {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 1.2rem;
+  line-height: 1.25rem;
+  color: rgba(0,0,0,0.5);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons .icon {
+  border-radius: 0.125rem;
+  padding: 0.75rem;
+  border: none;
+  background-color: transparentre;
+  margin-left: 8px;
+  background-color: #fff;
+}
+
+.social-icons .icon svg {
+  height: 2rem;
+  width: 2rem;
+  fill: #000000;
+}
+
+.signup {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #000000;
+  font-size: 1.4rem;
+}
+.signup a{
+  color: var(--blue--);
+  text-decoration: underline;
+}
+.text_label{
+  font-size: 1.4rem !important;
+}
+
+

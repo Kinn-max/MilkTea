@@ -1,0 +1,143 @@
+-- --------------------------------------------------------
+-- Máy chủ:                      127.0.0.1
+-- Server version:               10.4.32-MariaDB - mariadb.org binary distribution
+-- Server OS:                    Win64
+-- HeidiSQL Phiên bản:           12.6.0.6765
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+-- Dumping database structure for websitets
+CREATE DATABASE IF NOT EXISTS `websitets` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+USE `websitets`;
+
+-- Dumping structure for table websitets.category
+CREATE TABLE IF NOT EXISTS `category` (
+  `codecategory` varchar(255) NOT NULL,
+  `namecategory` varchar(255) DEFAULT NULL,
+  `imgcategory` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`codecategory`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table websitets.customer
+CREATE TABLE IF NOT EXISTS `customer` (
+  `codecustomer` varchar(255) NOT NULL,
+  `usercustomer` varchar(100) NOT NULL,
+  `password` varchar(525) NOT NULL,
+  `fullname` varchar(255) NOT NULL,
+  `address` varchar(525) NOT NULL,
+  `phonenumber` varchar(12) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  PRIMARY KEY (`codecustomer`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table websitets.detailorder
+CREATE TABLE IF NOT EXISTS `detailorder` (
+  `codedetailorder` varchar(525) NOT NULL,
+  `order` varchar(525) NOT NULL,
+  `consigneename` varchar(255) NOT NULL DEFAULT '',
+  `phonenumber` varchar(12) NOT NULL DEFAULT '',
+  `deliveryaddress` varchar(525) NOT NULL DEFAULT '',
+  `note` varchar(525) DEFAULT NULL,
+  `payment` varchar(50) NOT NULL DEFAULT '',
+  `dateorder` date NOT NULL,
+  KEY `FK_detailorder_order` (`order`),
+  CONSTRAINT `FK_detailorder_order` FOREIGN KEY (`order`) REFERENCES `order` (`codeorder`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table websitets.order
+CREATE TABLE IF NOT EXISTS `order` (
+  `codeorder` varchar(525) NOT NULL,
+  `codecustomer` varchar(525) DEFAULT NULL,
+  `codeproduct` varchar(525) DEFAULT NULL,
+  `codesize` varchar(525) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `suger` varchar(255) DEFAULT NULL,
+  `fullnametopping` varchar(525) DEFAULT NULL,
+  `totalprice` double DEFAULT NULL,
+  `pricetopping` double DEFAULT NULL,
+  `checkorder` smallint(6) DEFAULT NULL,
+  PRIMARY KEY (`codeorder`),
+  KEY `FK_order_customer` (`codecustomer`),
+  KEY `FK_order_product` (`codeproduct`),
+  KEY `FK_order_suger` (`suger`),
+  CONSTRAINT `FK_order_customer` FOREIGN KEY (`codecustomer`) REFERENCES `customer` (`codecustomer`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_order_product` FOREIGN KEY (`codeproduct`) REFERENCES `product` (`codeproduct`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_order_suger` FOREIGN KEY (`suger`) REFERENCES `suger` (`codesuger`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table websitets.product
+CREATE TABLE IF NOT EXISTS `product` (
+  `codeproduct` varchar(525) NOT NULL,
+  `nameproduct` varchar(525) DEFAULT NULL,
+  `imgproduct` varchar(525) DEFAULT NULL,
+  `category` varchar(255) DEFAULT NULL,
+  `sizeproduct` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`codeproduct`),
+  KEY `FK__category` (`category`),
+  KEY `FK__sizeproduct` (`sizeproduct`),
+  CONSTRAINT `FK__category` FOREIGN KEY (`category`) REFERENCES `category` (`codecategory`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK__sizeproduct` FOREIGN KEY (`sizeproduct`) REFERENCES `sizeproduct` (`codesize`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table websitets.sizeproduct
+CREATE TABLE IF NOT EXISTS `sizeproduct` (
+  `codesize` varchar(255) NOT NULL,
+  `sizem` double DEFAULT NULL,
+  `sizel` double DEFAULT NULL,
+  PRIMARY KEY (`codesize`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table websitets.slideindex
+CREATE TABLE IF NOT EXISTS `slideindex` (
+  `codeimg` varchar(255) NOT NULL,
+  `takeimg` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`codeimg`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table websitets.suger
+CREATE TABLE IF NOT EXISTS `suger` (
+  `codesuger` varchar(255) NOT NULL,
+  `namesuger` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`codesuger`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table websitets.topping
+CREATE TABLE IF NOT EXISTS `topping` (
+  `codetopping` varchar(255) NOT NULL,
+  `nametopping` varchar(255) DEFAULT NULL,
+  `pricetopping` double NOT NULL DEFAULT 0,
+  PRIMARY KEY (`codetopping`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

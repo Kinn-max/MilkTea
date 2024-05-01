@@ -1,0 +1,407 @@
+
+
+.background_boddy{
+    background-color: var(--body--);
+    display: flex;
+    justify-content: space-between;
+}
+.show_category-both{
+    display: flex;
+    justify-content: space-between;
+}
+.category{
+    background-color: #ffffff;
+    font-size: 1.4rem;
+    color: var(--color-titlt--);
+    font-weight: 100;
+    text-align: left;
+    padding: 20px;
+    width: 250px;
+    max-height: 60vh;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.category h3{
+    padding: 10px 8px;
+    font-size: 1.8rem;
+    font-weight: 200;
+    color: var(--color-titlt--);
+}
+.category_list-item{
+    border-top: 1px solid rgba(0,0,0,0.2);
+    padding: 10px 5px;
+    color: var( --color-text-low--);
+}
+.category_list-item :hover{
+    cursor: pointer;
+}
+.category_list-item i{
+    color: var(--color-text-low--);
+    font-size:  1.2rem;
+}
+.list-dentail{
+    width: 100%;
+    display: block;
+    padding: 8px;
+    display: none;
+    animation: slideDown 0.5s ease-out;
+}
+.transform-deg{
+    transform: rotate(180deg);
+}
+
+@keyframes slideDown {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        top: 0;
+    }
+}
+.toggle-auto{
+    display: block !important;
+}
+.list-dentail--item{
+    width: 100%;
+    padding: 8px 5px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    color: var(--color-titlt--);
+}
+
+.show_product{
+    max-width: 880px;
+}
+.wrap_show-list.width-category{
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.wrap_show-information.plus_coversition{
+    transform: translateY(0);
+    height: 50px;
+    background-color: #ffffff ;
+    text-align: left;
+}
+.wrap_show-all.length_cart{
+    height: 250px;
+    padding: 10px;
+    border-radius: 5px; 
+    background-color: #ffffff !important;
+    margin-bottom: 10px;
+}
+.wrap_show-all.length_cart:hover .wrap_show-list.width-category{
+    transform: scale(1) ;
+}
+.wrap_show-information.plus_coversition span{
+    font-size: 1.5rem;
+    padding: 10px;
+}
+.flex_cart{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 8px;
+}
+.flex_cart i{
+    color: #17202A;
+}
+.border_circle{
+    border: 1px solid #17202A;
+    padding: 4px 6px;
+    border-radius: 50%;
+    transition: transform 3s linear;
+    font-size: 1.2rem;
+}
+.border_circle:hover i{
+    transform: rotate(50deg);
+    color: #ffffff;
+}
+.border_circle:hover{
+    background-color: #B2BABB;
+    border: 1px solid #17202A;
+}
+.wrap_show-break{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.center_product{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.15);
+    height: 100vh;
+    width: 100%;
+    z-index: 20;
+    transform: translateY(-80px);
+    display: none;
+}
+.center_product-dentail{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+}
+.top-teaMilk-img{
+    width: 200px;
+    height: 200px;
+}
+.top-teaMilk-img img{
+    width: 100%;
+    height: 100%;
+}
+.top-teaMilk{
+    display: flex;
+}
+.price_product{
+    margin: 10px 0;
+}
+.price_product span{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.name_product-title{
+    display: flex;
+    font-size: 2rem;
+    justify-content: space-between;
+}
+.name_product-title h3 {
+    padding-right: 50px;
+    font-size: 1.8rem;
+    font-weight: 200;
+
+}
+.total_price-center{
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+.add-option--now{
+
+}
+.add-cart{
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #d0011b ;
+    margin-right: 10px;
+    color: #d0011b;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+}
+.buy-now-click{
+	background-color: #d0011b;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+}
+.add-cart:hover{
+	cursor: pointer;
+    background-color: #F5B7B1;
+}
+.buy-now-click:hover{
+    cursor: pointer;
+    background-color: #d2263c;
+}
+.top-teaMilk-infor{
+    margin: 20px 30px;
+    text-align: left;
+}
+.quantity_product{
+    display: flex;
+}
+.both-quantity{
+    display: flex;
+    align-items: center;
+}
+.quantity_product-get input{
+    text-align: center;
+    width: 30px;
+    font-size: 1.5rem;
+    border: none;
+}
+.quantity_product-mul,.quantity_product-plus{
+    padding: 5px 8px;
+    border-radius: 50%;
+    background-color:  #273746  ;
+    margin-right: 20px;
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+.quantity_product-plus{
+    margin-left: 20px;
+}
+.width_total{
+    max-width: 100px;
+}
+.add_product-click{
+    padding: 8px 5px;
+    background-color:  #F9E79F;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    color:var(--color-titlt--);
+}
+.add_product-click:focus{
+    outline: none;
+    border: none;
+}
+.add_product-click input{
+    border: none;
+}
+.size_product{
+    text-align: left;
+    padding: 20px 10px;
+}
+.size_product-pick{
+    display: flex;
+    margin-top: 10px;
+    background-color: var(--title--);
+    padding: 5px 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    justify-content: space-around;
+    
+}
+.size_product h3{
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+.size_product-pick--name{
+    font-size: 1.5rem;
+    font-weight: 100;
+    display: flex;
+
+}
+.size_product-pick--name label{
+    display:block;
+    line-height:40px;
+    padding-top: 7px;
+    font-weight: 100;
+ }
+.option-size {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 13.33333px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    transition: all 0.15s ease-out 0s;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    position: relative;
+    z-index: 100;
+    border-radius: 50%;
+}
+.option-size:hover {
+background: #9faab7;
+}
+.option-size:checked {
+background: #40e0d0;
+}
+.option-size:checked::before {
+    width: 30px;
+    height: 30px;
+    display:flex;
+    content: "";
+    font-size: 25px;
+    font-weight:bold;
+    position: absolute;
+    align-items:center;
+    justify-content:center;
+    font-family:'Font Awesome 5 Free';
+}
+.option-size:checked::after {
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+    background: #40e0d0;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 10;
+}
+.option-size.radio {
+border-radius: 50%;
+}
+.option-size.radio::after {
+border-radius: 50%;
+}
+
+@keyframes click-wave {
+0% {
+    height: 20px;
+    width: 20px;
+    opacity: 0.35;
+    position: relative;
+}
+100% {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-left: -50px;
+    margin-top: -40px;
+    opacity: 0;
+}
+}
+.three_pick-more{
+    display: flex;
+    align-items: center;
+}
+.font_more-price{
+    justify-content: space-between !important;
+    padding: 0 10px;
+    align-items: center;
+}
+.font_more-price p{
+    font-size: 1.4rem;
+}
+.control_pointer{
+    height: 300px;
+    overflow-y: scroll;
+    border-top: 1px solid rgba(0, 0, 0, 0.16);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+
+}
+.control_pointer::-webkit-scrollbar {
+    width: 3px;
+}
+  
+.control_pointer::-webkit-scrollbar-thumb {
+    background-color: #17202A;
+    /* border-radius: 50%; */
+}
+  
+  .control_pointer::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+.add_product-click input :hover{
+    cursor: pointer;
+}
+.add_product-click,.quantity_product-mul,.quantity_product-plus,.close_dentail :hover{
+    cursor: pointer;
+}
+.a_dentail-product:hover{
+	 cursor: pointer;
+}
+
+  
+
+
+
